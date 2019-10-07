@@ -23,4 +23,17 @@ func main() {
 	}{true, false}
 	fmt.Println(structLiteral)
 
+	pointA := struct {
+		x int
+		y int
+	}{x: 1, y: 2}
+	//creates a new copy of the struct
+	pointB := pointA
+	fmt.Println(pointA, pointB)
+	pointB.x = 5
+	fmt.Println(pointA, pointB)
+	point3 := &pointA
+	point3.x = 6
+	fmt.Println(pointA, pointB)
+
 }

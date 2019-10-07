@@ -99,4 +99,19 @@ func main() {
 	}
 	fmt.Println()
 
+	points1 := []struct {
+		x int
+		y int
+	}{
+		{x: 1, y: 2},
+		{x: 3, y: 4},
+		{x: 5, y: 6},
+	}
+	points2 := points1
+	fmt.Println(points1, points2)
+	//map/slice/channel values are pointers wrapped by struct values
+	//the destination and source map/slice/channel values in an assignment will share the same underlying data pointed by the wrapped pointer
+	points2[1].x = 99
+	fmt.Println(points1, points2)
+
 }

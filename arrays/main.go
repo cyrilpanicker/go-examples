@@ -29,4 +29,17 @@ func main() {
 	}
 	fmt.Println(array4)
 
+	array5 := [2]struct {
+		x int
+		y int
+	}{
+		{x: 1, y: 2},
+		{x: 3, y: 4},
+	}
+	//creates a new copy of the array
+	array6 := array5
+	fmt.Println(array5, array6)
+	array6[1].x = 99
+	fmt.Println(array5, array6)
+
 }
