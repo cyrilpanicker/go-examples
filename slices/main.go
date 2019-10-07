@@ -72,8 +72,8 @@ func main() {
 	describeSlice("slice9", slice9)
 
 	sliceOfSlicesOfStrings := [][]string{
-		[]string{"a", "b"},
-		[]string{"c", "d"},
+		{"a", "b"},
+		{"c", "d"},
 	}
 	fmt.Println(sliceOfSlicesOfStrings)
 
