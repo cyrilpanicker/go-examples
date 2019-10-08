@@ -26,14 +26,30 @@ func main() {
 	pointA := struct {
 		x int
 		y int
-	}{x: 1, y: 2}
+	}{1, 2}
 	//creates a new copy of the struct
 	pointB := pointA
 	fmt.Println(pointA, pointB)
 	pointB.x = 5
 	fmt.Println(pointA, pointB)
-	point3 := &pointA
-	point3.x = 6
+	pointC := &pointA
+	pointC.x = 6
 	fmt.Println(pointA, pointB)
+
+	//creates a new copy of the struct,
+	//but since slice is a pointer based value, it will share the same underlying data
+	pointD := struct {
+		a int
+		b [4]int
+		c []int
+	}{
+		10,
+		[4]int{0, 1, 2, 3},
+		[]int{0, 1, 2, 3},
+	}
+	pointE := pointD
+	pointE.b[1] = 99
+	pointE.c[1] = 99
+	fmt.Println(pointD, ",", pointE)
 
 }

@@ -60,4 +60,15 @@ func main() {
 	value1, isPresent1 := map5["key1"]
 	fmt.Println(value1, isPresent1)
 
+	map7 := map[string]string{
+		"key1": "value1",
+		"key2": "value2",
+		"key3": "value3",
+	}
+	map8 := map7
+	//map/slice/channel values are pointers wrapped by struct values
+	//the destination and source map/slice/channel values in an assignment will share the same underlying data pointed by the wrapped pointer
+	map8["key2"] = "value99"
+	fmt.Println(map7, map8)
+
 }

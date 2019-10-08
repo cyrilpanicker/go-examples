@@ -103,9 +103,9 @@ func main() {
 		x int
 		y int
 	}{
-		{x: 1, y: 2},
-		{x: 3, y: 4},
-		{x: 5, y: 6},
+		{1, 2},
+		{3, 4},
+		{5, 6},
 	}
 	points2 := points1
 	fmt.Println(points1, points2)
