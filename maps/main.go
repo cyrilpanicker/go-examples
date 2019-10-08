@@ -7,6 +7,10 @@ type point struct {
 	y int
 }
 
+func (value point) String() string {
+	return fmt.Sprintf("%v|%v", value.x, value.y)
+}
+
 func main() {
 
 	map1 := map[string]string{
@@ -70,5 +74,14 @@ func main() {
 	//the destination and source map/slice/channel values in an assignment will share the same underlying data pointed by the wrapped pointer
 	map8["key2"] = "value99"
 	fmt.Println(map7, map8)
+
+	map9 := map[string]point{
+		"point1": {2, 3},
+		"point2": {4, 5},
+		"point3": {6, 7},
+	}
+	for key, value := range map9 {
+		fmt.Println(key, value)
+	}
 
 }
